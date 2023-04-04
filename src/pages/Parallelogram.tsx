@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import Layout from "../components/Layout";
 import Card from "../components/Card";
@@ -7,6 +7,43 @@ import Button from "../components/Button";
 import { CustomInput } from "../components/Input";
 
 const Parallelogram = () => {
+  const [circumference, setCircumference] = useState<number>(0);
+  const [tinggi, setTinggi] = useState<number>(0);
+  const [sisiA, setSisiA] = useState<number>(0);
+  const [sisiB, setSisiB] = useState<number>(0);
+  const [alas, setAlas] = useState<number>(0);
+  const [area, setArea] = useState<number>(0);
+
+  function areaParallelogram(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    let res = 0;
+    try {
+      res += alas * tinggi;
+      setArea(res);
+    } catch (error) {
+      alert("Error harap ulang kembali");
+    }
+  }
+
+  function circumferenceParallelogram(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    let res = 0;
+    try {
+      res += 2*(sisiA + sisiB);
+      setCircumference(res);
+    } catch (error) {
+      alert("Error harap ulang kembali");
+    }
+  }
+  function reset() {
+    setArea(0);
+    setAlas(0);
+    setTinggi(0);
+    setCircumference(0);
+    setSisiA(0);
+    setSisiB(0);
+  }
+
   return (
     <Layout
       triangle="text-black"
@@ -26,20 +63,49 @@ const Parallelogram = () => {
           </>
         }
         form={
-          <form className="w-full">
-            <CustomInput label="Alas" inputSet="my-2" type="number" min={0} />
-            <CustomInput label="Tinggi" inputSet="mb-5" type="number" min={0} />
-            <Button
-              label="Hitung"
-              type="submit"
-              buttonSet="bg-blue-500 hover:bg-blue-600"
-            />
-            <Button
-              label="Reset"
-              type="reset"
-              buttonSet="bg-yellow-500 hover:bg-yellow-600"
-            />
-          </form>
+          <>
+            <form className="w-full" onSubmit={areaParallelogram}>
+              <CustomInput
+                label="Alas (cm)"
+                inputSet="my-2"
+                type="number"
+                min={0}
+                onChange={(e) => setAlas(e.target.valueAsNumber)}
+              />
+              <CustomInput
+                label="Tinggi (cm)"
+                inputSet="mb-5"
+                type="number"
+                min={0}
+                onChange={(e) => setTinggi(e.target.valueAsNumber)}
+              />
+              <Button
+                label="Hitung"
+                type="submit"
+                buttonSet="bg-blue-500 hover:bg-blue-600"
+              />
+              <Button
+                label="Reset"
+                type="reset"
+                buttonSet="bg-yellow-500 hover:bg-yellow-600"
+                onClick={() => reset()}
+              />
+            </form>
+            <p>
+              {area === 0 ? null : (
+                <>
+                  <p className="capitalize text-lg font-semibold mb-2">
+                    penjelasan:{" "}
+                  </p>
+                  <p className="text-lg font-semibold">L= a x t</p>
+                  <p className="text-lg font-semibold">
+                    L= {alas} x {tinggi}
+                  </p>
+                  <p className="text-lg font-semibold">L = {area} cm</p>
+                </>
+              )}
+            </p>
+          </>
         }
       />
       <Card
@@ -55,18 +121,21 @@ const Parallelogram = () => {
           </>
         }
         form={
-          <form className="w-full">
+          <>
+          <form className="w-full" onSubmit={circumferenceParallelogram}>
             <CustomInput
-              label="Sisi A-B"
+              label="Sisi A-B (cm)"
               inputSet="my-2"
               type="number"
               min={0}
+              onChange={(e) => setSisiA(e.target.valueAsNumber)}
             />
             <CustomInput
-              label="Sisi B-C"
+              label="Sisi B-C (cm)"
               inputSet="mb-5"
               type="number"
               min={0}
+              onChange={(e) => setSisiB(e.target.valueAsNumber)}
             />
             <Button
               label="Hitung"
@@ -77,8 +146,24 @@ const Parallelogram = () => {
               label="Reset"
               type="reset"
               buttonSet="bg-yellow-500 hover:bg-yellow-600"
+              onClick={() => reset()}
             />
           </form>
+          <p>
+          {circumference === 0 ? null : (
+                <>
+                  <p className="capitalize text-lg font-semibold mb-2">
+                    penjelasan:{" "}
+                  </p>
+                  <p className="text-lg font-semibold">K= 2 (AB+BC)</p>
+                  <p className="text-lg font-semibold">
+                    K= 2 ({sisiA} + {sisiB} )
+                  </p>
+                  <p className="text-lg font-semibold">K = {circumference} cm</p>
+                </>
+              )}
+          </p>
+          </>
         }
       />
     </Layout>
