@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: FC<ButtonProps> = ({ buttonSet, label, ...props }) => {
   return (
     <button
-      className={`btn ${buttonSet}`}
+      className={`btn flex w-1/6 mb-5 border-none ${buttonSet}`}
       {...props}
     >
       {label}
