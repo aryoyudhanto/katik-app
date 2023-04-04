@@ -14,9 +14,9 @@ export const CustomInput: FC<PropsInput> = ({
 }) => {
   return (
     <>
-      <label className={`${labelSet}`}>{label}</label>
+      <label className={`text-sm md:text-lg ${labelSet}`}>{label}</label>
       <input
-        className={`input input-bordered w-full bg-white ${inputSet}`}
+        className={`input input-bordered w-full bg-white  ${inputSet}`}
         {...props}
       />
     </>

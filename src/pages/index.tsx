@@ -58,9 +58,9 @@ const index = () => {
         mathForm="L= 1/2 x a x t"
         explain={
           <>
-            <li className="text-lg">L = Luas</li>
-            <li className="text-lg">a= Panjang Alas</li>
-            <li className="text-lg">t = Tinggi</li>
+            <li className="text-sm md:text-lg">L = Luas</li>
+            <li className="text-sm md:text-lg">a= Panjang Alas</li>
+            <li className="text-sm md:text-lg">t = Tinggi</li>
           </>
         }
         form={
@@ -117,9 +117,9 @@ const index = () => {
         mathForm="K= s1 + s2 + s3"
         explain={
           <>
-            <li className="text-lg">s1 = Sisi A-B</li>
-            <li className="text-lg">s2= Sisi B-C</li>
-            <li className="text-lg">s3= Sisi C-A</li>
+            <li className="text-sm md:text-lg">s1 = Sisi A-B</li>
+            <li className="text-sm md:text-lg">s2= Sisi B-C</li>
+            <li className="text-sm md:text-lg">s3= Sisi C-A</li>
           </>
         }
         form={
