@@ -166,7 +166,7 @@ const index = () => {
                   </p>
                   <p className="text-lg font-semibold">K= s1 + s2 + s3</p>
                   <p className="text-lg font-semibold">
-                    K= {sisiA} x {sisiB} x {sisiC}
+                    K= {sisiA} + {sisiB} + {sisiC}
                   </p>
                   <p className="text-lg font-semibold">K = {circumference} cm</p>
                 </>
