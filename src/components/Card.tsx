@@ -1,18 +1,29 @@
 import React, { FC } from "react";
-import Button from "./Button";
-import { CustomInput } from "./Input";
 
 interface CardProps {
+  name: string;
   image: string;
   alt: string;
+  formula: string;
+  mathForm: string;
+  explain: any;
+  form: any;
 }
 
-const Card: FC<CardProps> = ({ image, alt }) => {
+const Card: FC<CardProps> = ({
+  name,
+  image,
+  alt,
+  formula,
+  mathForm,
+  explain,
+  form,
+}) => {
   return (
-    <div className="card bg-base-100 shadow-xl mt-10">
-      <div className="flex w-full h-20 bg-blue-500 rounded-2xl">
+    <div className="card bg-base-100 shadow-xl mt-10 border-2 border-blue-500">
+      <div className="flex w-full h-20 bg-blue-500 rounded-xl">
         <p className="flex w-full justify-center items-center text-3xl text-white">
-          Luas Segitiga
+          {name}
         </p>
       </div>
       <figure className="px-10 pt-10">
@@ -20,24 +31,16 @@ const Card: FC<CardProps> = ({ image, alt }) => {
       </figure>
       <div className="card-body ">
         <h2 className="card-title font-normal text-lg">
-          Rumus Luas Segitiga yaitu:{" "}
+          Rumus {formula} yaitu:{" "}
         </h2>
-        <p className="text-center font-bold text-xl">L= 1/2 x a x t</p>
+        <p className="text-center font-bold text-xl">{mathForm}</p>
         <p>Dimana: </p>
-        <ul>
-          <li className="text-lg">L= Luas</li>
-          <li className="text-lg">a= Panjang Alas</li>
-          <li className="text-lg">t= Tinggi</li>
-        </ul>
+        <ul>{explain}</ul>
         <hr />
-        <p className="text-center font-bold text-2xl mt-5">Hitung Luas Segitiga</p>
-        <div className="card-actions justify-center">
-          <form className="w-full">
-            <CustomInput label="Alas" inputSet="my-2"/>
-            <CustomInput label="Tinggi" inputSet="mb-5"/>
-            <Button label="Hitung"/>
-          </form>
-        </div>
+        <p className="text-center font-bold text-2xl mt-5 capitalize">
+          Hitung {formula}
+        </p>
+        <div className="card-actions justify-center">{form}</div>
       </div>
     </div>
   );
