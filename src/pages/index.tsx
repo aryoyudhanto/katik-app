@@ -95,14 +95,14 @@ const index = () => {
             <p>
               {area === 0 ? null : (
                 <>
-                  <p className="capitalize text-lg font-semibold mb-2">
+                  <p className="capitalize text-sm md:text-lg font-semibold mb-2">
                     penjelasan:{" "}
                   </p>
-                  <p className="text-lg font-semibold">L= 1/2 x a x t</p>
-                  <p className="text-lg font-semibold">
+                  <p className="text-sm md:text-lg font-semibold">L= 1/2 x a x t</p>
+                  <p className="text-sm md:text-lg font-semibold">
                     L= 1/2 x {alas} x {tinggi}
                   </p>
-                  <p className="text-lg font-semibold">L = {area} cm</p>
+                  <p className="text-sm md:text-lg font-semibold">L = {area} cm</p>
                 </>
               )}
             </p>
@@ -161,14 +161,14 @@ const index = () => {
             <p>
               {circumference === 0 ? null : (
                 <>
-                  <p className="capitalize text-lg font-semibold mb-2">
+                  <p className="capitalize text-sm md:text-lg font-semibold mb-2">
                     penjelasan:{" "}
                   </p>
-                  <p className="text-lg font-semibold">K= s1 + s2 + s3</p>
-                  <p className="text-lg font-semibold">
+                  <p className="text-sm md:text-lg font-semibold">K= s1 + s2 + s3</p>
+                  <p className="text-sm md:text-lg font-semibold">
                     K= {sisiA} + {sisiB} + {sisiC}
                   </p>
-                  <p className="text-lg font-semibold">K = {circumference} cm</p>
+                  <p className="text-sm md:text-lg font-semibold">K = {circumference} cm</p>
                 </>
               )}
             </p>

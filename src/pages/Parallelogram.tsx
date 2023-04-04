@@ -94,14 +94,14 @@ const Parallelogram = () => {
             <p>
               {area === 0 ? null : (
                 <>
-                  <p className="capitalize text-lg font-semibold mb-2">
+                  <p className="capitalize text-sm md:text-lg font-semibold mb-2">
                     penjelasan:{" "}
                   </p>
-                  <p className="text-lg font-semibold">L= a x t</p>
-                  <p className="text-lg font-semibold">
+                  <p className="text-sm md:text-lg font-semibold">L= a x t</p>
+                  <p className="text-sm md:text-lg font-semibold">
                     L= {alas} x {tinggi}
                   </p>
-                  <p className="text-lg font-semibold">L = {area} cm</p>
+                  <p className="text-sm md:text-lg font-semibold">L = {area} cm</p>
                 </>
               )}
             </p>
@@ -152,14 +152,14 @@ const Parallelogram = () => {
           <p>
           {circumference === 0 ? null : (
                 <>
-                  <p className="capitalize text-lg font-semibold mb-2">
+                  <p className="capitalize text-sm md:text-lg font-semibold mb-2">
                     penjelasan:{" "}
                   </p>
-                  <p className="text-lg font-semibold">K= 2 (AB+BC)</p>
-                  <p className="text-lg font-semibold">
+                  <p className="text-sm md:text-lg font-semibold">K= 2 (AB+BC)</p>
+                  <p className="text-sm md:text-lg font-semibold">
                     K= 2 ({sisiA} + {sisiB} )
                   </p>
-                  <p className="text-lg font-semibold">K = {circumference} cm</p>
+                  <p className="text-sm md:text-lg font-semibold">K = {circumference} cm</p>
                 </>
               )}
           </p>
